@@ -1,16 +1,18 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
+import { StoreContext } from '../../context/StoreContext'
 
 export const Navbar = ({setShowLogin}) => {
 
   const [menu,setMenu] = useState("home");
 
+  const {getTotalCartAmount} = useContext(StoreContext)
+
   return (
     <div className='navbar'>
-      {/* <img src={assets.logo} className='logo'/> */}
+      
       {/* <ul className='navbar-menu'>
         <li onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>Home</li>
         <li onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>Menu</li>
@@ -18,9 +20,11 @@ export const Navbar = ({setShowLogin}) => {
         <li onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contato</li>
       </ul> */}
 
+      <Link to='/'><img src={assets.logo} className='logo'/></Link> 
+
       <ul className='navbar-menu'>
         <Link to='/' onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>Home</Link>
-        <a href='#explorer-menu' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>Menu</a>
+        <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>Menu</a>
         <a href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>Mobile-App</a>
         <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contato</a>
       </ul>
@@ -30,8 +34,8 @@ export const Navbar = ({setShowLogin}) => {
         
         <img src={assets.search_icon} alt="" />
         <div className='navbar-search-icon'>
-          <img src={assets.basket_icon} alt="" />
-          <div className='dot'></div>
+          <Link to='/cart'> <img src={assets.basket_icon} alt="" /></Link>
+          <div className={getTotalCartAmount()===0?"":"dot"}></div>
         </div>
 
         <div>
