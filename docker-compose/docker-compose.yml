@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     image: nginx:latest
-    container_name: web-app
+    container_name: fruitfresh-webapp
     restart: always
     ports:
       - "${WEBSITE_PORT}:80" 
