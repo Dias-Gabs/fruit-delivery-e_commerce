@@ -17,4 +17,3 @@ services:
     volumes:
       - /srv/website/data:/usr/share/nginx/html  
     depends_on:
-    	# Not necessary, running...
