@@ -6,7 +6,7 @@ const ExplorerMenu = ({category,setCategory}) => {
     return (
         <div className="explore-menu" id="explore-menu">
             <h1>Explore nosso menu</h1>
-            <p className="explore-menu-text">Escolha a partir de um menu diversificado com uma deliciosa variedade de pratos. A nossa missão é satisfazer os seus desejos e elevar a sua experiência gastronómica, uma refeição delecius de cada vez.</p>
+            <p className="explore-menu-text">Escolha a partir de um menu diversificado com uma deliciosa variedade de frutas e verduras. A nossa missão é satisfazer os seus desejos e elevar a sua experiência com a melhor HortiFruti da cidade.</p>
             
             <div className="explore-menu-list">
                 {menu_list.map((item,index) => {

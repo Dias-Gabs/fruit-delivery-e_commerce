@@ -2,7 +2,7 @@ import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
-import menu_1 from './menu_1.png'
+import menu_1 from './menu_1.jpg'
 import menu_2 from './menu_2.png'
 import menu_3 from './menu_3.png'
 import menu_4 from './menu_4.png'
@@ -10,7 +10,6 @@ import menu_5 from './menu_5.png'
 import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
-
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
 import food_3 from './food_3.png'
@@ -84,267 +83,277 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
+        menu_name: "Frutas",
         menu_image: menu_1
     },
     {
-        menu_name: "Rolls",
+        menu_name: "Verduras",
         menu_image: menu_2
     },
     {
-        menu_name: "Deserts",
+        menu_name: "Legumes",
         menu_image: menu_3
     },
     {
-        menu_name: "Sandwich",
+        menu_name: "Temperos",
         menu_image: menu_4
     },
     {
-        menu_name: "Cake",
+        menu_name: "Castanhas",
         menu_image: menu_5
     },
     {
-        menu_name: "Pure Veg",
+        menu_name: "Bebidas",
         menu_image: menu_6
     },
     {
-        menu_name: "Pasta",
+        menu_name: "Frios",
         menu_image: menu_7
     },
     {
-        menu_name: "Noodles",
+        menu_name: "Diversos",
         menu_image: menu_8
     }]
 
-export const food_list = [
-    {
-        _id: "1",
-        name: "Greek salad",
-        image: food_1,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
-    },
-    {
-        _id: "2",
-        name: "Veg salad",
-        image: food_2,
-        price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
-    }, {
-        _id: "3",
-        name: "Clover Salad",
-        image: food_3,
-        price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
-    }, {
-        _id: "4",
-        name: "Chicken Salad",
-        image: food_4,
-        price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
-    }, {
-        _id: "5",
-        name: "Lasagna Rolls",
-        image: food_5,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
-    }, {
-        _id: "6",
-        name: "Peri Peri Rolls",
-        image: food_6,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
-    }, {
-        _id: "7",
-        name: "Chicken Rolls",
-        image: food_7,
-        price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
-    }, {
-        _id: "8",
-        name: "Veg Rolls",
-        image: food_8,
-        price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Rolls"
-    }, {
-        _id: "9",
-        name: "Ripple Ice Cream",
-        image: food_9,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
-    }, {
-        _id: "10",
-        name: "Fruit Ice Cream",
-        image: food_10,
-        price: 22,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
-    }, {
-        _id: "11",
-        name: "Jar Ice Cream",
-        image: food_11,
-        price: 10,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
-    }, {
-        _id: "12",
-        name: "Vanilla Ice Cream",
-        image: food_12,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
-    },
-    {
-        _id: "13",
-        name: "Chicken Sandwich",
-        image: food_13,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Sandwich"
-    },
-    {
-        _id: "14",
-        name: "Vegan Sandwich",
-        image: food_14,
-        price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Sandwich"
-    }, {
-        _id: "15",
-        name: "Grilled Sandwich",
-        image: food_15,
-        price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Sandwich"
-    }, {
-        _id: "16",
-        name: "Bread Sandwich",
-        image: food_16,
-        price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Sandwich"
-    }, {
-        _id: "17",
-        name: "Cup Cake",
-        image: food_17,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
-        _id: "18",
-        name: "Vegan Cake",
-        image: food_18,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
-        _id: "19",
-        name: "Butterscotch Cake",
-        image: food_19,
-        price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
-        _id: "20",
-        name: "Sliced Cake",
-        image: food_20,
-        price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
-        _id: "21",
-        name: "Garlic Mushroom ",
-        image: food_21,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
-    }, {
-        _id: "22",
-        name: "Fried Cauliflower",
-        image: food_22,
-        price: 22,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
-    }, {
-        _id: "23",
-        name: "Mix Veg Pulao",
-        image: food_23,
-        price: 10,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
-    }, {
-        _id: "24",
-        name: "Rice Zucchini",
-        image: food_24,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
-    },
-    {
-        _id: "25",
-        name: "Cheese Pasta",
-        image: food_25,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    },
-    {
-        _id: "26",
-        name: "Tomato Pasta",
-        image: food_26,
-        price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "27",
-        name: "Creamy Pasta",
-        image: food_27,
-        price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "28",
-        name: "Chicken Pasta",
-        image: food_28,
-        price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "29",
-        name: "Buttter Noodles",
-        image: food_29,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }, {
-        _id: "30",
-        name: "Veg Noodles",
-        image: food_30,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }, {
-        _id: "31",
-        name: "Somen Noodles",
-        image: food_31,
-        price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }, {
-        _id: "32",
-        name: "Cooked Noodles",
-        image: food_32,
-        price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }
-]
+    export const food_list = [
+        // Frutas
+        {
+            _id: "1",
+            name: "Morango Tradicional 250g",
+            image: food_1,
+            price: 12,
+            category: "Frutas"
+        },
+        {
+            _id: "2",
+            name: "Morango Orgânico 200g",
+            image: food_2,
+            price: 16,
+            category: "Frutas"
+        },
+        {
+            _id: "3",
+            name: "Laranja Lima Pacote 1.5kg",
+            image: food_3,
+            price: 16.99,
+            category: "Frutas"
+        },
+        {
+            _id: "4",
+            name: "Maçã Fuji 1kg",
+            image: food_4,
+            price: 14,
+            category: "Frutas"
+        },
+        {
+            _id: "5",
+            name: "Banana Prata 1kg",
+            image: food_5,
+            price: 8,
+            category: "Frutas"
+        },
+    
+        // Verduras
+        {
+            _id: "6",
+            name: "Alface Americana",
+            image: food_6,
+            price: 6,
+            category: "Verduras"
+        },
+        {
+            _id: "7",
+            name: "Espinafre Fresco",
+            image: food_7,
+            price: 8,
+            category: "Verduras"
+        },
+        {
+            _id: "8",
+            name: "Couve Kale",
+            image: food_8,
+            price: 12,
+            category: "Verduras"
+        },
+        {
+            _id: "9",
+            name: "Rúcula",
+            image: food_9,
+            price: 9,
+            category: "Verduras"
+        },
+        {
+            _id: "10",
+            name: "Acelga",
+            image: food_10,
+            price: 7,
+            category: "Verduras"
+        },
+    
+        // Legumes
+        {
+            _id: "11",
+            name: "Batata Doce 1kg",
+            image: food_11,
+            price: 7,
+            category: "Legumes"
+        },
+        {
+            _id: "12",
+            name: "Cenoura 1kg",
+            image: food_12,
+            price: 6,
+            category: "Legumes"
+        },
+        {
+            _id: "13",
+            name: "Abobrinha 1kg",
+            image: food_13,
+            price: 8,
+            category: "Legumes"
+        },
+        {
+            _id: "14",
+            name: "Pepino 1kg",
+            image: food_14,
+            price: 5,
+            category: "Legumes"
+        },
+        {
+            _id: "15",
+            name: "Berinjela 1kg",
+            image: food_15,
+            price: 9,
+            category: "Legumes"
+        },
+    
+        // Temperos
+        {
+            _id: "16",
+            name: "Alho 100g",
+            image: food_16,
+            price: 4,
+            category: "Temperos"
+        },
+        {
+            _id: "17",
+            name: "Cebola 1kg",
+            image: food_17,
+            price: 5,
+            category: "Temperos"
+        },
+        {
+            _id: "18",
+            name: "Pimentinha 50g",
+            image: food_18,
+            price: 3,
+            category: "Temperos"
+        },
+        {
+            _id: "19",
+            name: "Salsinha 50g",
+            image: food_19,
+            price: 2,
+            category: "Temperos"
+        },
+    
+        // Castanhas
+        {
+            _id: "20",
+            name: "Castanha de Caju 200g",
+            image: food_20,
+            price: 20,
+            category: "Castanhas"
+        },
+        {
+            _id: "21",
+            name: "Amêndoas 150g",
+            image: food_21,
+            price: 22,
+            category: "Castanhas"
+        },
+        {
+            _id: "22",
+            name: "Nozes 200g",
+            image: food_22,
+            price: 25,
+            category: "Castanhas"
+        },
+    
+        // Bebidas
+        {
+            _id: "23",
+            name: "Suco de Laranja 1L",
+            image: food_23,
+            price: 8,
+            category: "Bebidas"
+        },
+        {
+            _id: "24",
+            name: "Água Mineral 500ml",
+            image: food_24,
+            price: 3,
+            category: "Bebidas"
+        },
+        {
+            _id: "25",
+            name: "Refrigerante Cola 350ml",
+            image: food_25,
+            price: 6,
+            category: "Bebidas"
+        },
+    
+        // Frios
+        {
+            _id: "26",
+            name: "Presunto 200g",
+            image: food_26,
+            price: 15,
+            category: "Frios"
+        },
+        {
+            _id: "27",
+            name: "Queijo Prato 150g",
+            image: food_27,
+            price: 18,
+            category: "Frios"
+        },
+        {
+            _id: "28",
+            name: "Salame 150g",
+            image: food_28,
+            price: 20,
+            category: "Frios"
+        },
+    
+        // Diversos
+        {
+            _id: "29",
+            name: "Granola 250g",
+            image: food_29,
+            price: 14,
+            category: "Diversos"
+        },
+        {
+            _id: "30",
+            name: "Mel 250g",
+            image: food_30,
+            price: 22,
+            category: "Diversos"
+        },
+        {
+            _id: "31",
+            name: "Azeite de Oliva 500ml",
+            image: food_31,
+            price: 30,
+            category: "Diversos"
+        },
+        {
+            _id: "32",
+            name: "Vinagre Balsâmico 250ml",
+            image: food_32,
+            price: 18,
+            category: "Diversos"
+        }
+    ];
+    

@@ -1,9 +1,11 @@
 .header{
-    height: 34vw;
+    height: 38vw;
     margin: 30px auto;
-    background: url('/header_img.png') no-repeat;
-    background-size: contain;
-    position: relative;
+    width: 100%;
+    background: url('/public/header_img.png') no-repeat;
+    background-size: 100%;
+    position: relative
+    
 }
 
 .header-contents{
@@ -11,8 +13,9 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
+    gap: 1.1vw;
+    max-width: 50%; 
+    max-height: 80%;
     bottom: 10%;
     left: 6vw;
     animation: fadeIn 3s;
@@ -20,18 +23,18 @@
 
 .header-contents h2{
     font-weight: 500;
-    color: white;
-    font-size: max(4.5vw,22px);
+    color: #E53935;
+    font-size: max(3.5vw,18px);
 }
 
 .header-contents p{
-    color: white;
+    color: #fff;
     font-size: 1vw;
 }
 
 .header-contents button{
     border: none;
-    color: #747474;
+    color: #E53935;
     font-weight: 500;
     padding: 1vw 2.3vw;
     background-color: white;
