@@ -2,7 +2,7 @@ import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
-import menu_1 from './menu_1.jpg'
+import menu_1 from './menu_1.png'
 import menu_2 from './menu_2.png'
 import menu_3 from './menu_3.png'
 import menu_4 from './menu_4.png'
@@ -244,9 +244,9 @@ export const menu_list = [
         },
         {
             _id: "18",
-            name: "Pimentinha 50g",
+            name: "Pimentão por Kg",
             image: food_18,
-            price: 3,
+            price: 12,
             category: "Temperos"
         },
         {
@@ -297,7 +297,7 @@ export const menu_list = [
         },
         {
             _id: "25",
-            name: "Refrigerante Cola 350ml",
+            name: "Refrigerante Coca-Cola 350ml",
             image: food_25,
             price: 6,
             category: "Bebidas"
@@ -306,21 +306,21 @@ export const menu_list = [
         // Frios
         {
             _id: "26",
-            name: "Presunto 200g",
+            name: "Presunto Cozido Sadia 200g",
             image: food_26,
             price: 15,
             category: "Frios"
         },
         {
             _id: "27",
-            name: "Queijo Prato 150g",
+            name: "Queijo Prato President 150g",
             image: food_27,
             price: 18,
             category: "Frios"
         },
         {
             _id: "28",
-            name: "Salame 150g",
+            name: "Salame Sadia Defumado 100g",
             image: food_28,
             price: 20,
             category: "Frios"
@@ -329,9 +329,9 @@ export const menu_list = [
         // Diversos
         {
             _id: "29",
-            name: "Granola 250g",
+            name: "Granola 800g",
             image: food_29,
-            price: 14,
+            price: 20,
             category: "Diversos"
         },
         {
