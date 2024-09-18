@@ -1,7 +1,7 @@
 .food-item {
     width: 100%;
-    max-width: 300px; /* Tamanho máximo definido */
-    min-height: 335px; /* Força uma altura mínima consistente */
+    max-width: 300px; 
+    min-height: 330px; 
     margin: auto;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #00000015;
@@ -9,27 +9,29 @@
     animation: fadeIn 1s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Garante que os elementos internos sejam distribuídos */
+    justify-content: space-between; 
+    overflow: hidden;
 }
 
 .food-item-img-container {
     width: 100%;
-    height: 200px; /* Altura fixa para o contêiner da imagem */
+    height: auto;
+    max-height: 200px;
     position: relative;
     overflow: hidden;
 }
 
 .food-item-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
 
 .food-item-info {
     padding: 20px;
-    box-sizing: border-box; /* Padding não afeta o tamanho total do contêiner */
-    flex-grow: 1; /* Garante que a área de informações ocupe o espaço disponível */
+    box-sizing: border-box; 
+    flex-grow: 1; 
 }
 
 .food-item-name-rating {
@@ -67,6 +69,7 @@
     right: 15px;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 1;
 }
 
 .food-item-counter {
