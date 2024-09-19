@@ -1,36 +1,45 @@
 import React, { useState } from "react";
-import './LoginPopup.css'
+import './LoginPopup.css';
 import { assets } from "../../assets/assets";
 
-const LoginPopup = ({setShowLogin}) => {
+const LoginPopup = ({ setShowLogin }) => {
+    const [currState, setCurrState] = useState("Login");
 
-    const [currState,setCurrState] = useState("Login")
-    
-    return(
+    return (
         <div className="login-popup">
-            
             <form className="login-popup-container">
                 <div className="login-popup-title">
                     <h2>{currState}</h2>
-                    <img onClick={()=>setShowLogin(false)} src={assets.cross_icon} alt="" />
+                    <img
+                        onClick={() => setShowLogin(false)}
+                        className={currState === "Login" ? "margin-login" : "margin-register"}
+                        src={assets.cross_icon}
+                        alt="Fechar"
+                    />
                 </div>
                 <div className="login-popup-inputs">
-                    {currState==="Login"?<></>:<input type="text" placeholder="Seu nome" required/>}
-                    <input type="email" placeholder="Email" required/>
-                    <input type="password" placeholder="Senha" required/>
+                    {currState === "Registrar-se" && (
+                        <input type="text" placeholder="Seu nome" required />
+                    )}
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Senha" required />
                 </div>
-                <button>{currState==="Registrar-se"?"Criar conta":"Login"}</button>
                 <div className="login-popup-condition">
-                    <input type="checkbox" required/>
-                    <p>Ao aceitar, eu declaro que concordo com os termos de uso e políticas de privacidade</p>
+                    <input type="checkbox" id="terms" required />
+                    <label htmlFor="terms"> Eu aceito os termos de uso e políticas de privacidade.</label>
                 </div>
-                {currState==="Login"}
-                <p>Criar uma nova conta? <span onClick={()=>setCurrState("Registre-se")}>Clique aqui</span>.</p>
-                <p>Já possui conta? <span onClick={()=>setCurrState("Login")}>Faça login aqui</span>.</p>
+                <button type="submit">{currState === "Registrar-se" ? "Criar conta" : "Login"}</button>
+                <p>
+                    {currState === "Registrar-se" 
+                        ? "Já possui conta? " 
+                        : "Criar uma nova conta? "}
+                    <span onClick={() => setCurrState(currState === "Registrar-se" ? "Login" : "Registrar-se")}>
+                        {currState === "Registrar-se" ? "Faça login aqui" : "Clique aqui"}
+                    </span>.
+                </p>
             </form>
-
         </div>
-    )
+    );
 }
 
-export default LoginPopup
+export default LoginPopup;

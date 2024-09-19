@@ -7,7 +7,6 @@ const Header = () => {
     <div className='header'>
         <div className='header-contents'>
             <h2>Peça aqui suas frutas e verduras favoritas, que entragamos no confoto de sua casa.</h2>
-           
         </div>
     </div>
   )

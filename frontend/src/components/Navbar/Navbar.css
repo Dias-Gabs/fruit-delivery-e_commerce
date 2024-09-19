@@ -24,10 +24,10 @@
     align-items: center;
 }
 
-.navbar button{
-    background: transparent;
+.login-button {
+    background: #E53935;
     font-size: 16px;
-    color: #49557e;
+    color: #fff;
     border: 1px solid #E53935;
     padding: 10px 30px;
     border-radius: 50px;
@@ -36,7 +36,8 @@
 }
 
 .navbar button:hover{
-    background-color: #fff4f2;
+    background-color: #ad0300;
+    border: 1px solid #ad0300;
 }
 
 .navbar .active{
@@ -55,11 +56,39 @@
     position: absolute;
     min-width: 10px;
     min-height: 10px;
-    background-color: tomato;
+    background-color: #E53935;
     border-radius: 5px;
     top: -8px;
     right: -8px;
 }
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-search input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .navbar-search button {
+    background: transparent;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .navbar-search button img {
+    width: 20px;
+  }
 
 /* @media (max-width:750px){
     .navbar .logo{

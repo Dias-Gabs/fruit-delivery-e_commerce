@@ -135,7 +135,7 @@ export const menu_list = [
             _id: "3",
             name: "Laranja Lima Pacote 1.5kg",
             image: food_3,
-            price: 16.99,
+            price: 16,
             category: "Frutas"
         },
         {

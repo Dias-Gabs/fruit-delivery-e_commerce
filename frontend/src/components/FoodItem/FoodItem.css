@@ -87,3 +87,11 @@
 .food-item-counter img {
     width: 30px;
 }
+
+.food-item {
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.food-item:hover {
+    transform: translateY(-5px); 
+}
