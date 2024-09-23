@@ -1,13 +1,21 @@
 import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 
 export const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
   const [searchTerm, setSearchTerm] = useState(""); // Estado para armazenar o termo de pesquisa
-  const { getTotalCartAmount } = useContext(StoreContext);
+  const { getTotalCartAmount,token,setToken } = useContext(StoreContext);
+
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("token")
+    setToken("");
+    navigate("/");
+  }
 
   // Função que será chamada ao clicar no ícone de pesquisa
   const handleSearch = () => {
@@ -45,10 +53,16 @@ export const Navbar = ({ setShowLogin }) => {
           <Link to='/cart'> <img src={assets.basket_icon} alt="Basket Icon" /></Link>
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
-
-        <div>
-          <button className='login-button' onClick={() => setShowLogin(true)}>Entrar</button>
-        </div>
+        {!token?<button onClick={() => setShowLogin(true)}>Entrar</button>
+        :<div className='navbar-profile'>
+            <img src={assets.profile_icon} alt="" />
+            <ul className='nav-profile-dropdown'>
+              <li><img onClick={()=>navigate('/myorders')} src={assets.bag_icon} alt=""/></li>
+              <hr />
+              <li onClick={logout} ><img src={assets.logout_icon} alt=""/></li>
+            </ul>
+        </div>}
+        
       </div>
     </div>
   );
