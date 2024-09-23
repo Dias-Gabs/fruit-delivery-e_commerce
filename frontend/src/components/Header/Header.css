@@ -1,0 +1,35 @@
+.header {
+    height: 38vw;
+    margin: 30px auto;
+    width: 100%;
+    background: url('/public/header_img.png') no-repeat;
+    background-size: 100%;
+    position: relative;
+    opacity: 0; 
+    animation: fadeIn 3s forwards; 
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; 
+    }
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.1vw;
+    max-width: 50%; 
+    max-height: 80%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s; 
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    color: #E53935;
+    font-size: max(3.5vw, 18px);
+}
