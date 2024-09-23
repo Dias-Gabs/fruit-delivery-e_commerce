@@ -1,21 +1,8 @@
-// import mongoose from "mongoose";
-
-// const userSchema = new mongoose.Schema({
-//     name:{type:String,required:true},
-//     email:{type:String,required:true,unique:true},
-//     password:{type:String,required:true},
-//     cartData:{type:Object,default:{}},
-// },{minimize:false})
-
-// const userModel = mongoose.models.user || mongoose.model("user",userSchema);
-
-// export default userModel;
-
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 
 // Definindo o modelo do usuário
-const userModel = sequelize.define('User', {
+const User = sequelize.define('User', {
     name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -38,4 +25,5 @@ const userModel = sequelize.define('User', {
     timestamps: false // Não usar timestamps automáticos
 });
 
-export default userModel;
+// Exportando o modelo User
+export default User;

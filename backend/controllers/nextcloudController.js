@@ -1,4 +1,8 @@
 import { db } from "../config/db.js"; // Certifique-se de importar a conexão com o banco de dados
+import sequelize from "../config/db.js"; // Importe a instância do Sequelize
+
+// Aqui você pode usar sequelize para interagir com o banco de dados
+
 
 // Função para salvar uma imagem no banco de dados
 export const saveImage = async (userId, imageData) => {

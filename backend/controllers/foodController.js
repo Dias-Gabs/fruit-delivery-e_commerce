@@ -68,8 +68,65 @@ const getAllFoods = async (req, res) => {
         res.json({ success: true, foods });
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Erro" });
+        res.status(500).json({ success: false, message: "Erro ao obter alimentos" });
     }
 }
 
-export { getAllFoods };
+// Adicionar um novo alimento
+const addFoodItem = async (req, res) => {
+    const { name, price, description, category } = req.body;
+
+    try {
+        const newFood = await foodModel.create({ name, price, description, category });
+        res.json({ success: true, message: "Alimento adicionado com sucesso", newFood });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Erro ao adicionar alimento" });
+    }
+}
+
+// Atualizar um alimento existente
+const updateFoodItem = async (req, res) => {
+    const { id } = req.params;
+    const { name, price, description, category } = req.body;
+
+    try {
+        const food = await foodModel.findByPk(id);
+        if (!food) {
+            return res.status(404).json({ success: false, message: "Alimento não encontrado" });
+        }
+
+        food.name = name || food.name;
+        food.price = price || food.price;
+        food.description = description || food.description;
+        food.category = category || food.category;
+
+        await food.save();
+        res.json({ success: true, message: "Alimento atualizado com sucesso", food });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Erro ao atualizar alimento" });
+    }
+}
+
+// Deletar um alimento existente
+const deleteFoodItem = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const food = await foodModel.findByPk(id);
+        if (!food) {
+            return res.status(404).json({ success: false, message: "Alimento não encontrado" });
+        }
+
+        await food.destroy();
+        res.json({ success: true, message: "Alimento deletado com sucesso" });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Erro ao deletar alimento" });
+    }
+}
+
+// Exportando todas as funções
+export { getAllFoods, addFoodItem, updateFoodItem, deleteFoodItem };
+

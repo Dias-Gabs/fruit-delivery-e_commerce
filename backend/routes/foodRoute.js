@@ -22,7 +22,7 @@
 
 // routes/foodRoute.js
 import express from "express";
-import { addFoodItem, updateFoodItem, deleteFoodItem, listFoodItems } from "../controllers/foodController.js";
+import { addFoodItem, updateFoodItem, deleteFoodItem, getAllFoods } from "../controllers/foodController.js";
 
 const router = express.Router();
 
@@ -36,6 +36,6 @@ router.put("/:id", updateFoodItem);
 router.delete("/:id", deleteFoodItem);
 
 // Rota para listar itens de comida
-router.get("/", listFoodItems);
+router.get("/", getAllFoods);
 
 export default router;

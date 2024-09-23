@@ -1,14 +1,10 @@
-// import mongoose from "mongoose";
-
-// export const connectDB = async () => {
-//     await mongoose.connect('mongodb+srv://fruitfresh:198198Gg$@cluster0.82xg4.mongodb.net/fruitfresh-ecommerce').then(()=>console.log("- #LOG: MongoDB Database connected!"));
-// }
-
 import { Sequelize } from 'sequelize';
+import { setupDatabase, createDatabaseAndTables } from './dbSetup.js';
 
 // Configuração do banco de dados
 const sequelize = new Sequelize('database', 'username', 'password', {
     host: 'ip_do_banco_de_dados',
+    port: 3306, // Certifique-se de que a porta está correta
     dialect: 'mariadb',
     logging: false,
     retry: {
@@ -16,27 +12,25 @@ const sequelize = new Sequelize('database', 'username', 'password', {
     }
 });
 
-// Função para conectar ao banco de dados
+// Função para tentar conectar ao banco de dados
 export const connectDB = async () => {
-    try {
-        await sequelize.authenticate();
-        console.log("- #LOG: MariaDB Database connected!");
-    } catch (error) {
-        console.error("- #LOG: Unable to connect to the database:", error);
-        // Se não conseguir conectar, pode criar localmente ou tentar novamente
-        for (let i = 0; i < 3; i++) {
-            try {
-                await sequelize.authenticate();
-                console.log("- #LOG: MariaDB Database connected!");
-                return;
-            } catch (error) {
-                console.error("- #LOG: Attempt", i + 1, "failed");
+    for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+            await sequelize.authenticate();
+            console.log("- #LOG: MariaDB Database connected!");
+            // Chama a função de configuração para verificar e configurar as tabelas
+            await setupDatabase(sequelize);
+            return;
+        } catch (error) {
+            console.error("- #LOG: Unable to connect to the database:", error);
+            if (attempt === 3) {
+                console.log("- #LOG: Attempting to create local database...");
+                await createDatabaseAndTables(sequelize);
             }
         }
-        // Criar banco de dados local se não conseguir conectar
-        console.log("- #LOG: Creating local database...");
-        // Lógica para criar o banco local
     }
 };
 
-export default sequelize;
+// Exportação do objeto sequelize
+export default sequelize; // Exportação padrão
+export { sequelize as db }; // Exportando como 'db'

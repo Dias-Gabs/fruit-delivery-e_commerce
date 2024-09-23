@@ -2,19 +2,12 @@ import fs from 'fs';
 import path from 'path';
 
 export const setupDatabase = async (connection) => {
-    const sqlFilePath = path.join(__dirname, 'setup.sql');
-    const sqlScript = fs.readFileSync(sqlFilePath, 'utf8');
-
-    await connection.query(sqlScript);
+    // Lógica para verificar e criar as tabelas necessárias no banco de dados online
+    await createTablesIfNotExists(connection);
     console.log("- #LOG: Database setup completed.");
 };
 
-// Função para criar o SQL caso não exista
-export const createDatabaseAndTables = async (connection) => {
-    const createDatabase = `CREATE DATABASE IF NOT EXISTS ${connection.config.database};`;
-    await connection.query(createDatabase);
-    
-    // Aqui você pode adicionar a lógica para criar tabelas
+const createTablesIfNotExists = async (connection) => {
     const createUsersTable = `
         CREATE TABLE IF NOT EXISTS users (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,4 +33,13 @@ export const createDatabaseAndTables = async (connection) => {
 
     await connection.query(createUsersTable);
     await connection.query(createOrdersTable);
+};
+
+// Função para criar o SQL caso não exista
+export const createDatabaseAndTables = async (connection) => {
+    const createDatabase = `CREATE DATABASE IF NOT EXISTS ${connection.config.database};`;
+    await connection.query(createDatabase);
+    
+    // Criação das tabelas se a base de dados foi criada
+    await createTablesIfNotExists(connection);
 };
