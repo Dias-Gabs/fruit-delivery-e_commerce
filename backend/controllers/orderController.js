@@ -32,7 +32,7 @@ const placeOrder = async (req,res) => {
 
         line_items.push({
             price_data:{
-                currency:"inr",
+                currency:"brl",
                 product_data:{
                     name:"Taxas de delivery"
                 },
