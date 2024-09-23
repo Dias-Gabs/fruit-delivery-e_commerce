@@ -1,21 +1,41 @@
+// import express from "express";
+// import { addFood,listFood,removeFood } from "../controllers/foodController.js";
+// import multer from "multer";
+
+// const foodRouter = express.Router();
+
+// // Image store engine
+// const storage = multer.diskStorage({
+//     destination:"uploads",
+//     filename:(req,file,cb)=>{
+//         return cb(null,`${Date.now()}${file.originalname}`)
+//     }
+// })
+
+// const upload = multer({storage:storage})
+
+// foodRouter.post("/add",upload.single("image"),addFood)
+// foodRouter.get("/list",listFood)
+// foodRouter.post("/remove",removeFood);
+
+// export default foodRouter;
+
+// routes/foodRoute.js
 import express from "express";
-import { addFood,listFood,removeFood } from "../controllers/foodController.js";
-import multer from "multer";
+import { addFoodItem, updateFoodItem, deleteFoodItem, listFoodItems } from "../controllers/foodController.js";
 
-const foodRouter = express.Router();
+const router = express.Router();
 
-// Image store engine
-const storage = multer.diskStorage({
-    destination:"uploads",
-    filename:(req,file,cb)=>{
-        return cb(null,`${Date.now()}${file.originalname}`)
-    }
-})
+// Rota para adicionar um item de comida
+router.post("/", addFoodItem);
 
-const upload = multer({storage:storage})
+// Rota para atualizar um item de comida
+router.put("/:id", updateFoodItem);
 
-foodRouter.post("/add",upload.single("image"),addFood)
-foodRouter.get("/list",listFood)
-foodRouter.post("/remove",removeFood);
+// Rota para remover um item de comida
+router.delete("/:id", deleteFoodItem);
 
-export default foodRouter;
+// Rota para listar itens de comida
+router.get("/", listFoodItems);
+
+export default router;

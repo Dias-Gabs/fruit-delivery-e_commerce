@@ -1,9 +1,27 @@
+// import express from "express";
+// import { loginUser,registerUser } from "../controllers/userController.js";
+
+// const userRoute = express.Router()
+
+// userRoute.post("/register",registerUser)
+// userRoute.post("/login",loginUser)
+
+// export default userRoute;
+
+// routes/userRoute.js
 import express from "express";
-import { loginUser,registerUser } from "../controllers/userController.js";
+import { registerUser, loginUser, getUserProfile } from "../controllers/userController.js";
+import authMiddleware from "../middleware/auth.js";
 
-const userRoute = express.Router()
+const router = express.Router();
 
-userRoute.post("/register",registerUser)
-userRoute.post("/login",loginUser)
+// Rota para registrar um novo usuário
+router.post("/register", registerUser);
 
-export default userRoute;
+// Rota para login de usuário
+router.post("/login", loginUser);
+
+// Rota para obter o perfil do usuário
+router.get("/profile", authMiddleware, getUserProfile);
+
+export default router;
