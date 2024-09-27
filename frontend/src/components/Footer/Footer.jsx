@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-content-left">
                     <img src={assets.logo} alt=""/>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias at fugit quis? Cupiditate pariatur quam corrupti libero odio repellendus, cum hic assumenda error eos dignissimos ullam at! Nesciunt, numquam adipisci!</p>
+                    <p>Na Fruit Fresh, acreditamos que o frescor é essencial para uma vida saudável. Por isso, trabalhamos todos os dias para garantir que as melhores frutas cheguem até você com qualidade e sabor incomparáveis. Do campo direto para a sua mesa, nossa missão é levar saúde e bem-estar a cada entrega.</p>
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt=""/>
                         <img src={assets.twitter_icon} alt=""/>

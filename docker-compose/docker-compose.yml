@@ -16,3 +16,4 @@ services:
       NEXTCLOUD_URL: ${NEXTCLOUD_URL} 
     volumes:
       - /srv/website/data:/usr/share/nginx/html  
+    depends_on:

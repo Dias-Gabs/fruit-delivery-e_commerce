@@ -9,28 +9,44 @@
 
 .login-popup-container {
     place-self: center;
-    width: max(23vw, 330px); 
+    width: max(22vw, 320px);
     color: #808080; 
     background-color: white; 
     display: flex; 
     flex-direction: column; 
     gap: 25px;
-    padding: 25px 30px;
+    padding: 30px 30px;
     border-radius: 8px; 
     font-size: 14px; 
-    animation: fadeIn 0.5;
+    animation: fadeIn 1.0;
+    align-items: flex-start;   
 }
+
 
 .login-popup-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
+    padding-bottom: 8px;
+}
+
+.login-popup-tittle h2 {
+    margin: 0;
+    padding: 0; 
 }
 
 .login-popup-title img {
     width: 16px;
     cursor: pointer;
+}
+
+.margin-login {
+    margin-left: 200px; 
+}
+
+.margin-register {
+    margin-left: 130px; 
 }
 
 .login-popup-inputs {
@@ -44,6 +60,7 @@
     border: 1px solid #c9c9c9;
     padding: 10px;
     border-radius: 4px;
+    width: 250px;
 }
 
 .login-popup-container button {
@@ -51,9 +68,15 @@
     padding: 10px;
     border-radius: 4px;
     color: white;
-    background-color: tomato;
+    background-color: #E53935;
     font-size: 15px;
     cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.login-popup-container button:hover{
+    background-color: #ad0300;
 }
 
 .login-popup-container {
@@ -64,7 +87,49 @@
 }
 
 .login-popup p span {
-    color: tomato;
+    color: #E53935;
     font-weight: 500;
     cursor: pointer;
 }
+
+.login-popup-condition {
+    margin-top: 10px;
+}
+
+.login-popup-condition input{
+   margin-top: 10px;
+}
+
+.login-popup-condition input[type="checkbox"] {
+    display: none;
+}
+
+.login-popup-condition label {
+    position: relative;
+    padding-left: 25px; 
+    cursor: pointer;
+}
+
+.login-popup-condition label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #E53935; 
+    border-radius: 4px;
+    background-color: white; 
+    transition: background-color 0.3s; 
+}
+
+
+.login-popup-condition label:hover::before {
+    background-color: #E53935; 
+}
+
+
+.login-popup-condition input[type="checkbox"]:checked + label::before {
+    background-color: #E53935; 
+}
+
